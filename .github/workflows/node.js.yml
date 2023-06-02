@@ -24,8 +24,11 @@ jobs:
       run: pwd
     - name: List directory contents
       run: ls -l
-    - name: Go to backend directory
-      run: cd flexfood/backend || exit
+    - name: Find backend directory
+      run: |
+          backend_dir=$(find . -type d -name "backend" -print -quit)
+          echo "Backend directory: $backend_dir"
+          cd "$backend_dir" || exit
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
