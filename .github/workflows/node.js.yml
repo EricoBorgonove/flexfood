@@ -23,9 +23,7 @@ jobs:
     - name: Verify current directory
       run: pwd
     - name: List directory contents
-      run: ls -l
-    - name: Find backend directory
-      run: /home/flexfood/backend
+      run: ls -l && cd backend
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
