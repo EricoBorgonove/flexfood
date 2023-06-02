@@ -28,7 +28,7 @@ jobs:
       run: |
           backend_dir=$(find . -type d -name "backend" -print -quit)
           echo "Backend directory: $backend_dir"
-          cd "$backend_dir" || exit
+          cd "$backend_dir"
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
